@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vazio Design Studio - Em construção</title>
+  <meta name="description" content="Site simples, rápido e responsivo para apresentar seus serviços e captar contatos.">
+  <meta property="og:title" content="Vazio Design Studio - Em construção" />
+  <meta property="og:description" content="Site responsivo, pronto para Netlify (com formulário)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <!-- Favicon minimalista (SVG inline) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' font-size='50' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EFS%3C/text%3E%3C/svg%3E">
+  <style>
+   :root{ --card: #f8fafc;
+--text: #0f172a;
+--muted: #64748b;
+--brand: #0ea5e9;
+--brand-2: #22d3ee;
+--ok: #22c55e;
+--warn: #f59e0b;
+--danger: #ef4444;
+--radius: 18px;
+--shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif; line-height:1.6}
+a{color:var(--brand); text-decoration:none}
+a:hover{opacity:.9}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0; backdrop-filter:saturate(1.2) blur(10px); background:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.05); z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700; color:var(--text)}
+.brand-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 12px rgba(14,165,233,.6)}
+.menu a{margin-left:18px; font-weight:500; color:var(--text)}
+.menu a.btn{background:linear-gradient(135deg,var(--brand),var(--brand-2)); padding:10px 16px; border-radius:999px; color:white; box-shadow: var(--shadow)}
+.hero{padding:80px 0 40px; text-align:center}
+.hero h1{font-size: clamp(28px, 6vw, 56px); margin:0 0 14px}
+.hero p{color:var(--muted); max-width:760px; margin:0 auto 26px}
+.hero .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+.contatobtn{display: flex;align-self: center;margin: auto;}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white; border:none; border-radius:12px; font-weight:700; cursor:pointer; transition: all .2s ease}
+.btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(14,165,233,.4)}
+.btn.outline{background:transparent; border:1.5px solid var(--brand); color:var(--brand)}
+section{padding:60px 0}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.card{background:var(--card); border:1px solid rgba(0,0,0,.05); border-radius:var(--radius); padding:22px; box-shadow: var(--shadow)}
+.card h3{margin-top:0}
+.tag{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(14,165,233,.1); color:var(--brand); border:1px solid rgba(14,165,233,.3); font-size:12px; font-weight:700; letter-spacing:.3px}
+.two-col{display:grid; grid-template-columns: 1.2fr 1fr; gap:26px; align-items:center}
+.img-wrap{border:1px solid rgba(0,0,0,.05); border-radius:var(--radius); overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow)}
+.img-wrap img{max-width:100%; height:auto; display:block}
+.list{margin:0; padding:0; list-style:none}
+.list li{display:flex; align-items:flex-start; gap:10px; margin:10px 0}
+.bullet{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--ok), var(--brand)); margin-top:8px}
+.testis{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+blockquote{margin:0; padding:18px; border-left:4px solid var(--brand); background:#f1f5f9; border-radius:12px; font-style:italic}
+form{display:grid; gap:12px}
+input, textarea{width:100%; padding:12px 14px; background:#f8fafc; color:var(--text); border:1px solid rgba(0,0,0,.1); border-radius:12px}
+input::placeholder, textarea::placeholder{color:#94a3b8}
+.footer{padding:30px 0; border-top:1px solid rgba(0,0,0,.05); color:var(--muted)}
+.whatsapp{display:inline-flex; gap:10px; align-items:center}
+
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(14,165,233,.4)}
+.countdown{display:flex;justify-content:center;gap:20px;font-size:20px;color:#0f172a;margin-bottom:24px}
+.countdown div{display:flex;flex-direction:column;align-items:center}
+.countdown span{font-size:32px;font-weight:700;color:#0ea5e9}
+
+
+/* Responsivo */
+@media (max-width: 980px){
+.grid-3{grid-template-columns:1fr 1fr}
+.two-col{grid-template-columns:1fr}
+.testis{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 640px){
+.grid-3, .testis{grid-template-columns:1fr}
+.menu{display:none}
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-dot"></span> <span>Vazio</span></div>
+      <nav class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato" class="btn">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <!-- <span class="tag">Site pronto para Netlify + SSL</span> -->
+      <h1>VAZIO DESIGN STUDIO</h1>
+    </section>
+
+    <div class="container">
+      <h1>Nosso novo site está em construção 🚧</h1>
+      <p>Estamos preparando uma experiência futurista para nosso estúdio de design. Em breve, novidades por aqui!</p>
+    <div class="countdown">
+      <div><span id="dias">0</span> Dias</div>
+      <div><span id="horas">0</span> Horas</div>
+      <div><span id="minutos">0</span> Minutos</div>
+      <div><span id="segundos">0</span> Segundos</div>
+    </div>
+    <a href="mailto:flaviasivm@gmail.com" class="contatobtn btn">Entre em contato</a>
+    </div>
+
+
+    <script>
+    // Configurar a data do lançamento
+    const lancamento = new Date('2025-12-21T00:00:00').getTime();
+
+
+    function atualizarCountdown(){
+    const agora = new Date().getTime();
+    const distancia = lancamento - agora;
+
+
+    const dias = Math.floor(distancia / (1000*60*60*24));
+    const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
+    const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+    const segundos = Math.floor((distancia % (1000*60)) / 1000);
+
+
+    document.getElementById('dias').textContent = dias;
+    document.getElementById('horas').textContent = horas;
+    document.getElementById('minutos').textContent = minutos;
+    document.getElementById('segundos').textContent = segundos;
+
+
+    if(distancia < 0){
+    clearInterval(intervalo);
+    document.querySelector('.countdown').textContent = 'Site lançado!';
+    }
+    }
+
+
+    const intervalo = setInterval(atualizarCountdown, 1000);
+    atualizarCountdown();
+    </script>
+
+    <section class="container" id="sobre">
+      <div class="two-col">
+        <div>
+          <h2>Quem somos</h2>
+          <p>Somos um pequeno estúdio de design, com base em São Paulo, dedicado a transformar ideias em experiências visuais. Acreditamos que um bom design vai além da estética: ele aproxima pessoas, comunica valores e fortalece marcas. Trabalhamos lado a lado com nossos clientes, entendendo suas histórias e objetivos, para criar soluções visuais que sejam bonitas, funcionais e cheias de significado.</p>
+        </div>
+      </div>
+    </section>
+
+    <br>
+
+    <section class="container" id="contato">
+      <div class="two-col">
+        <div>
+          <h2>Vamos conversar?</h2>
+          <p>Envie uma mensagem pelo formulário ou chame no WhatsApp. Retorno rápido 👇</p>
+          <p>
+            <a class="whatsapp btn" href="https://wa.me/5511987295996" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0 12 12 0 0 0 0 12a11.86 11.86 0 0 0 3.48 8.46L2 24l3.66-1.44A12 12 0 1 0 24 12a11.86 11.86 0 0 0-3.48-8.52z"></path><path d="M17.47 14.31c-.27-.14-1.6-.79-1.85-.88s-.43-.14-.61.14-.7.88-.86 1.06-.32.2-.59.07a7.83 7.83 0 0 1-2.3-1.42 8.67 8.67 0 0 1-1.61-2c-.17-.34 0-.52.12-.66s.27-.34.41-.52a2.2 2.2 0 0 0 .27-.45.59.59 0 0 0 0-.55c0-.14-.61-1.47-.84-2s-.45-.47-.61-.48h-.52a1 1 0 0 0-.73.34 3 3 0 0 0-.93 2.22 5.21 5.21 0 0 0 1.07 2.79 11.87 11.87 0 0 0 4.57 4.12 15.64 15.64 0 0 0 1.6.59 3.86 3.86 0 0 0 1.77.11 2.89 2.89 0 0 0 1.9-1.34 2.34 2.34 0 0 0 .14-1.34c-.13-.19-.26-.27-.53-.41z"></path></svg>
+              WhatsApp
+            </a>
+          </p>
+        </div>
+        <div class="card">
+          <!-- Netlify Forms: basta publicar no Netlify -->
+          <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contato" />
+            <p hidden>
+              <label>Não preencha: <input name="bot-field" /></label>
+            </p>
+            <label>
+              Nome
+              <input type="text" name="nome" placeholder="Seu nome" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="voce@exemplo.com" required />
+            </label>
+            <label>
+              Mensagem
+              <textarea name="mensagem" placeholder="Como posso ajudar?" rows="4" required></textarea>
+            </label>
+            <button class="btn" type="submit">Enviar</button>
+            <small class="muted">Ao enviar, você concorda com o contato por e‑mail/WhatsApp.</small>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+      <span>© <span id="year"></span> Vazio Design Studio. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
