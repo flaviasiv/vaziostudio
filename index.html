@@ -16,8 +16,8 @@
    :root{ --card: #f8fafc;
 --text: #0f172a;
 --muted: #64748b;
---brand: #0ea5e9;
---brand-2: #22d3ee;
+--brand: #1a1e29;
+--brand-2: #1b4063;
 --ok: #22c55e;
 --warn: #f59e0b;
 --danger: #ef4444;
@@ -32,7 +32,6 @@ a:hover{opacity:.9}
 header{position:sticky;top:0; backdrop-filter:saturate(1.2) blur(10px); background:rgba(255,255,255,.8); border-bottom:1px solid rgba(0,0,0,.05); z-index:50}
 .nav{display:flex;align-items:center;justify-content:space-between;min-height:68px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700; color:var(--text)}
-.brand-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 12px rgba(14,165,233,.6)}
 .menu a{margin-left:18px; font-weight:500; color:var(--text)}
 .menu a.btn{background:linear-gradient(135deg,var(--brand),var(--brand-2)); padding:10px 16px; border-radius:999px; color:white; box-shadow: var(--shadow)}
 .hero{padding:80px 0 40px; text-align:center}
@@ -41,7 +40,7 @@ header{position:sticky;top:0; backdrop-filter:saturate(1.2) blur(10px); backgrou
 .hero .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
 .contatobtn{display: flex;align-self: center;margin: auto;}
 .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white; border:none; border-radius:12px; font-weight:700; cursor:pointer; transition: all .2s ease}
-.btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(14,165,233,.4)}
+.btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0, 0, 0, 0.4)}
 .btn.outline{background:transparent; border:1.5px solid var(--brand); color:var(--brand)}
 section{padding:60px 0}
 .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
@@ -56,16 +55,16 @@ section{padding:60px 0}
 .bullet{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--ok), var(--brand)); margin-top:8px}
 .testis{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
 blockquote{margin:0; padding:18px; border-left:4px solid var(--brand); background:#f1f5f9; border-radius:12px; font-style:italic}
-form{display:grid; gap:12px}
+form{display:grid; gap:12px;}
 input, textarea{width:100%; padding:12px 14px; background:#f8fafc; color:var(--text); border:1px solid rgba(0,0,0,.1); border-radius:12px}
 input::placeholder, textarea::placeholder{color:#94a3b8}
-.footer{padding:30px 0; border-top:1px solid rgba(0,0,0,.05); color:var(--muted)}
+.footer{padding:30px 0; border-top:1px solid rgba(0,0,0,.05); color:var(--brand-2)}
 .whatsapp{display:inline-flex; gap:10px; align-items:center}
-
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(14,165,233,.4)}
-.countdown{display:flex;justify-content:center;gap:20px;font-size:20px;color:#0f172a;margin-bottom:24px}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 10px rgba(0, 0, 0, 0.4)}
+.countdown{display:flex;gap:20px;font-size:20px;color:#0f172a;margin-bottom:36px}
 .countdown div{display:flex;flex-direction:column;align-items:center}
-.countdown span{font-size:32px;font-weight:700;color:#0ea5e9}
+.countdown span{font-size:32px;font-weight:700;color:var(--brand-2)}
+.btnform{display: flex;max-width: 100px;justify-content: center;}
 
 
 /* Responsivo */
@@ -83,7 +82,7 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><span class="brand-dot"></span> <span>Vazio</span></div>
+      <div class="brand"><span>V</span></div>
       <nav class="menu">
         <a href="#sobre">Sobre</a>
       </nav>
@@ -97,7 +96,7 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
     </section>
 
     <div class="container">
-      <h1>Nosso novo site está em construção 🚧</h1>
+      <h1>Nosso novo site está em construção </h1>
       <p>Estamos preparando uma experiência futurista para nosso estúdio de design. Em breve, novidades por aqui!</p>
     <div class="countdown">
       <div><span id="dias">0</span> Dias</div>
@@ -105,7 +104,7 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
       <div><span id="minutos">0</span> Minutos</div>
       <div><span id="segundos">0</span> Segundos</div>
     </div>
-    <a href="mailto:flaviasivm@gmail.com" class="contatobtn btn">Entre em contato</a>
+    <a href="#contato" class="contatobtn btn">Entre em contato</a>
     </div>
 
 
@@ -152,10 +151,10 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
     </section>
 
     <br>
-<!-- 
-    <section class="container" id="contato">
+
+    <section class="container" id="contato" style="padding-bottom: 40px;">
       <div class="two-col">
-        <div>
+        <!-- <div>
           <h2>Vamos conversar?</h2>
           <p>Envie uma mensagem pelo formulário ou chame no WhatsApp. Retorno rápido 👇</p>
           <p>
@@ -164,10 +163,10 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
               WhatsApp
             </a>
           </p>
-        </div>
+        </div> -->
         <div class="card">
           <!-- Netlify Forms: basta publicar no Netlify -->
-          <!-- <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+         <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" netlify>
             <input type="hidden" name="form-name" value="contato" />
             <p hidden>
               <label>Não preencha: <input name="bot-field" /></label>
@@ -178,18 +177,18 @@ input::placeholder, textarea::placeholder{color:#94a3b8}
             </label>
             <label>
               E-mail
-              <input type="email" name="email" placeholder="voce@exemplo.com" required />
+              <input type="email" name="email" placeholder="seu@email.com" required />
             </label>
             <label>
               Mensagem
-              <textarea name="mensagem" placeholder="Como posso ajudar?" rows="4" required></textarea>
+              <textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="4" style="resize: none;"></textarea>
             </label>
-            <button class="btn" type="submit">Enviar</button>
+            <button class="btn btnform" type="submit">Enviar</button>
             <small class="muted">Ao enviar, você concorda com o contato por e‑mail/WhatsApp.</small>
           </form>
         </div>
       </div>
-    </section> -->
+    </section>
   </main>
 
   <footer class="footer">
